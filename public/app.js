@@ -58,6 +58,8 @@ var createLiPic = function() {
 var createImg = function(source) {
   var img = document.createElement("img");
   img.src = source;
+  img.width = "500";
+
   return img;
 }
 
@@ -71,11 +73,11 @@ var appendElements = function(ul, liName, liFood, liPic, img) {
   cats.appendChild(ul);
 }
 
+
 var app = function() {
-  addCat("Montgomery", "Ice cream", "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/25/6/enhanced/webdr13/original-grid-image-30390-1445768125-14.jpg?crop=499:749;0,1&downsize=715:*&output-format=auto&output-quality=auto")
+  for (var cat of catArray) {
+    addCat(cat.name, cat.food, cat.src);
+  }
 }
-
-
-
 
 window.addEventListener('load', app);
